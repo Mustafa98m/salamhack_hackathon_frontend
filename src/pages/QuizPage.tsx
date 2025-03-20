@@ -194,7 +194,7 @@ const QuizPage = () => {
         const questionResult = response.data;
         statusResults[index] = questionResult;
 
-        if (questionResult.status === 'Correct') {
+        if (questionResult?.status === 'Correct') {
           correctCount++;
         }
       });
@@ -230,7 +230,7 @@ const QuizPage = () => {
   const isCurrentAnswerCorrect =
     quizSubmitted &&
     questionStatuses[activeStep] &&
-    questionStatuses[activeStep].status === 'Correct';
+    questionStatuses[activeStep]?.status === 'Correct';
 
   // Open YouTube video in new tab
   const handleOpenVideo = () => {
@@ -539,7 +539,7 @@ const QuizPage = () => {
                 answers.filter((answer, index) => {
                   return (
                     questionStatuses[index] &&
-                    questionStatuses[index].status === 'Correct'
+                    questionStatuses[index]?.status === 'Correct'
                   );
                 }).length
               }{' '}

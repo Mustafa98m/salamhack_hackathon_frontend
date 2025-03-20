@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import logo from '../assets/photo_2025-03-20_19-07-30.jpg';
 import {
   AppBar,
   Box,
@@ -181,9 +182,13 @@ const AppLayout = () => {
     <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       <DrawerHeader>
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 2 }}>
-          <HeadphonesIcon sx={{ mr: 1 }} />
+          <img
+            src={logo}
+            alt='PodLearn'
+            style={{ width: '32px', height: '32px', marginRight: '10px' }}
+          />
           <Typography variant='h6' noWrap component='div' fontWeight='bold'>
-            PodLearn
+            LingoAI
           </Typography>
         </Box>
         <IconButton sx={{ color: 'inherit' }} onClick={handleDrawerToggle}>
